@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2019 Coop IT Easy
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="module_form" model="ir.ui.view">
+        <field name="name">module_form</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='button_immediate_install']" position="after">
+                <button name="button_get_binary" type="object" string="Generate"/>
+            </xpath>
+
+            <xpath expr="//field[@name='website']" position="after">
+                <field name="module_filename" invisible="1"/>
+                <field name="module_file" filename="module_filename"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
