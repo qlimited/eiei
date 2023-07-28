@@ -15,6 +15,8 @@ class Module(models.Model):
 
     def button_get_binary(self):
         path = get_module_resource(self.name)
+        path = path.replace('/' + self.name, '')
+        print(path)
         base = get_module_resource('base_module')
         module_name = base.replace('base_module', self.name)
         self.zip_directory(path, module_name + '.zip')
