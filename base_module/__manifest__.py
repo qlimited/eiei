@@ -3,11 +3,9 @@
     'category': 'Base',
     'license': 'OPL-1',
     "depends": [
-        "base",
+        "base", "account",
     ],
-    "data": [
-        'views/module_views.xml',
-    ],
+    "data": [],
     'installable': True,
     'auto_install': False,
     'application': True,
